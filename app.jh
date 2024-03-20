@@ -1,0 +1,76 @@
+application {
+  config {
+    baseName crm
+    applicationType monolith
+    reactive true
+    packageName com.ahmedmeid.crm
+    authenticationType jwt
+    databaseType sql
+    devDatabaseType h2Memory
+    prodDatabaseType postgresql
+    buildTool gradle
+    clientFramework no
+    skipClient true
+  }
+  entities *
+}
+
+entity Employee {
+    empName String
+    phoneNo String        
+}
+
+entity Department {
+    departmentName String
+    description String
+}
+
+entity Contact {
+    contactName String
+    jobTitle String
+    emailAddress String
+    phoneNo String 
+    addressNumber Integer
+    addressStreet String
+    addressCity String
+    leadSource String
+    status ContactStatus
+}
+
+enum ContactStatus {
+   LEAD, PROSPECT, CUSTOMER
+}
+
+entity Organization {
+    organizationName String required
+    industry String
+    website String
+    phoneNumber String 
+    address String
+}
+
+entity Notes {
+    noteTimestamp Instant
+    note TextBlob
+}
+
+entity Interaction {
+    interactionTimestamp Instant
+    type InteractionType
+    summary TextBlob
+}
+
+enum InteractionType {
+    CALL, EMAIL, MEETING
+}
+
+relationship OneToMany {
+    Department to Employee{department(departmentName)}
+    Contact to Interaction{contact(contactName) required}
+    Organization to Contact{org(organizationName)}
+    Contact to Notes{contact(contactName) required}
+}
+
+relationship ManyToMany{
+   Employee to Contact{emp(empName)}
+}
