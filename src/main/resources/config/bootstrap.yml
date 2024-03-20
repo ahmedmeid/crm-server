@@ -1,0 +1,10 @@
+spring:
+  application:
+    name: crm
+aws:
+  paramstore:
+    enabled: true
+    region: us-east-2
+    prefix: /config
+    defaultContext: crm
+    profileSeparator: _
