@@ -1,0 +1,30 @@
+{
+  "annotations": {
+    "changelogDate": "20240320112225"
+  },
+  "applications": ["crm"],
+  "entityTableName": "notes",
+  "fields": [
+    {
+      "fieldName": "noteTimestamp",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "note",
+      "fieldType": "byte[]",
+      "fieldTypeBlobContent": "text"
+    }
+  ],
+  "name": "Notes",
+  "relationships": [
+    {
+      "otherEntityField": "contactName",
+      "otherEntityName": "contact",
+      "relationshipName": "contact",
+      "relationshipSide": "right",
+      "relationshipType": "many-to-one",
+      "relationshipValidateRules": "required"
+    }
+  ],
+  "searchEngine": "no"
+}

@@ -1,0 +1,35 @@
+{
+  "annotations": {
+    "changelogDate": "20240320111825"
+  },
+  "applications": ["crm"],
+  "entityTableName": "employee",
+  "fields": [
+    {
+      "fieldName": "empName",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "phoneNo",
+      "fieldType": "String"
+    }
+  ],
+  "name": "Employee",
+  "relationships": [
+    {
+      "otherEntityName": "contact",
+      "otherEntityRelationshipName": "emp",
+      "relationshipName": "contact",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-many"
+    },
+    {
+      "otherEntityField": "departmentName",
+      "otherEntityName": "department",
+      "relationshipName": "department",
+      "relationshipSide": "right",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "searchEngine": "no"
+}

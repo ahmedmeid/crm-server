@@ -1,0 +1,78 @@
+{
+  "annotations": {
+    "changelogDate": "20240320112025"
+  },
+  "applications": ["crm"],
+  "entityTableName": "contact",
+  "fields": [
+    {
+      "fieldName": "contactName",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "jobTitle",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "emailAddress",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "phoneNo",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "addressNumber",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "addressStreet",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "addressCity",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "leadSource",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "status",
+      "fieldType": "ContactStatus",
+      "fieldValues": "LEAD,PROSPECT,CUSTOMER"
+    }
+  ],
+  "name": "Contact",
+  "relationships": [
+    {
+      "otherEntityName": "interaction",
+      "otherEntityRelationshipName": "contact",
+      "relationshipName": "interaction",
+      "relationshipSide": "left",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "notes",
+      "otherEntityRelationshipName": "contact",
+      "relationshipName": "notes",
+      "relationshipSide": "left",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityField": "organizationName",
+      "otherEntityName": "organization",
+      "relationshipName": "org",
+      "relationshipSide": "right",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityField": "empName",
+      "otherEntityName": "employee",
+      "relationshipName": "emp",
+      "relationshipSide": "right",
+      "relationshipType": "many-to-many"
+    }
+  ],
+  "searchEngine": "no"
+}

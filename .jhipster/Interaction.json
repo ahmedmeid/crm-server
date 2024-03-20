@@ -1,0 +1,35 @@
+{
+  "annotations": {
+    "changelogDate": "20240320112325"
+  },
+  "applications": ["crm"],
+  "entityTableName": "interaction",
+  "fields": [
+    {
+      "fieldName": "interactionTimestamp",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "type",
+      "fieldType": "InteractionType",
+      "fieldValues": "CALL,EMAIL,MEETING"
+    },
+    {
+      "fieldName": "summary",
+      "fieldType": "byte[]",
+      "fieldTypeBlobContent": "text"
+    }
+  ],
+  "name": "Interaction",
+  "relationships": [
+    {
+      "otherEntityField": "contactName",
+      "otherEntityName": "contact",
+      "relationshipName": "contact",
+      "relationshipSide": "right",
+      "relationshipType": "many-to-one",
+      "relationshipValidateRules": "required"
+    }
+  ],
+  "searchEngine": "no"
+}

@@ -1,0 +1,23 @@
+{
+  "generator-jhipster": {
+    "applicationIndex": 0,
+    "applicationType": "monolith",
+    "authenticationType": "jwt",
+    "baseName": "crm",
+    "buildTool": "gradle",
+    "clientFramework": "no",
+    "databaseType": "sql",
+    "devDatabaseType": "h2Memory",
+    "entities": ["Employee", "Department", "Contact", "Organization", "Notes", "Interaction"],
+    "jhipsterVersion": "8.1.0",
+    "jwtSecretKey": "ZDBiZDc3YzI5MWViZGZkOTY5NjdmMDQwOTQ4ZjBmMWQ3MWU1NTk3ZWVmNDM3OTY5ZWFiMGUxMDc1Y2Q1NDAxMmZhNjRhY2VkNjk2ZmZlYzJlNWQzMzVlZDI1ODI4OTdhZDY2ZTEwZjA4ODUyNzMwMTViNGZmMjAyNzZhODRhZDM=",
+    "languages": ["en"],
+    "lastLiquibaseTimestamp": 1710933805000,
+    "nativeLanguage": "en",
+    "packageFolder": "com/ahmedmeid/crm",
+    "packageName": "com.ahmedmeid.crm",
+    "prodDatabaseType": "postgresql",
+    "reactive": true,
+    "skipClient": true
+  }
+}
