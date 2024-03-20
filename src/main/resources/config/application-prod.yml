@@ -44,9 +44,6 @@ spring:
     url: ${r2dbc.url}
     username: ${r2dbc.username}
     password: ${r2dbc.password}
-    properties:
-      sslMode: verify-full
-      sslRootCert: classpath:us-east-2-bundle.pem
   thymeleaf:
     cache: true
 
