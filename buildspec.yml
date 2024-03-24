@@ -11,9 +11,10 @@ phases:
     commands:
       - echo "Build started on `date`"
       - ./gradlew -Pprod clean bootJar
+      - zip -r crm-server.zip build/libs/crm-0.0.1-SNAPSHOT.jar scripts/*.sh appspec.yml
   post_build:
     commands:
       - echo "Build completed on `date`"
 artifacts:
   files:
-    - build/libs/crm-0.0.1-SNAPSHOT.jar
+    - crm-server.zip
