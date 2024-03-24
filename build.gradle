@@ -200,6 +200,7 @@ dependencies {
     implementation 'org.springframework.cloud:spring-cloud-starter:4.1.1'
     implementation 'org.springframework.cloud:spring-cloud-starter-bootstrap:4.1.1'
     implementation 'org.springframework.cloud:spring-cloud-starter-aws-parameter-store-config:2.2.6.RELEASE'
+    implementation 'org.springframework:spring-webmvc'
     testImplementation "org.springframework.boot:spring-boot-starter-test"
     testImplementation "org.springframework.boot:spring-boot-test"
     testImplementation "org.springframework.security:spring-security-test"
@@ -224,6 +225,8 @@ dependencies {
         }
     }
     // jhipster-needle-gradle-dependency - JHipster will add additional dependencies here
+    compileOnly 'org.projectlombok:lombok:1.18.32'
+    annotationProcessor 'org.projectlombok:lombok:1.18.32'
 }
 
 if (project.hasProperty("gae")) {

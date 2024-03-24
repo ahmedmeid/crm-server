@@ -19,6 +19,9 @@ logging:
     tech.jhipster: INFO
     com.ahmedmeid.crm: INFO
 
+security:
+  allowed-client-address: ${allowed-client-address}
+
 management:
   prometheus:
     metrics:
