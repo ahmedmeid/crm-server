@@ -19,9 +19,6 @@ logging:
     tech.jhipster: INFO
     com.ahmedmeid.crm: INFO
 
-security:
-  allowed-client-address: ${allowed-client-address}
-
 management:
   prometheus:
     metrics:
@@ -84,6 +81,12 @@ server:
 # ===================================================================
 
 jhipster:
+  cors:
+    allowed-origins: ${allowed-client-address}
+    allowed-methods: '*'
+    allowed-headers: '*'
+    exposed-headers: 'Authorization,Link,X-Total-Count,X-${jhipster.clientApp.name}-alert,X-${jhipster.clientApp.name}-error,X-${jhipster.clientApp.name}-params'
+    allow-credentials: true
   http:
     cache: # Used by the CachingHttpHeadersFilter
       timeToLiveInDays: 1461
