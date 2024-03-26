@@ -2,7 +2,9 @@ package com.ahmedmeid.crm.repository;
 
 import com.ahmedmeid.crm.domain.Contact;
 import org.springframework.data.domain.Pageable;
+import org.springframework.data.querydsl.QuerydslPredicateExecutor;
 import org.springframework.data.r2dbc.repository.Query;
+import org.springframework.data.repository.query.ReactiveQueryByExampleExecutor;
 import org.springframework.data.repository.reactive.ReactiveCrudRepository;
 import org.springframework.stereotype.Repository;
 import reactor.core.publisher.Flux;
@@ -13,7 +15,8 @@ import reactor.core.publisher.Mono;
  */
 @SuppressWarnings("unused")
 @Repository
-public interface ContactRepository extends ReactiveCrudRepository<Contact, Long>, ContactRepositoryInternal {
+public interface ContactRepository
+    extends ReactiveCrudRepository<Contact, Long>, ContactRepositoryInternal, ReactiveQueryByExampleExecutor<Contact> {
     @Override
     Mono<Contact> findOneWithEagerRelationships(Long id);
 

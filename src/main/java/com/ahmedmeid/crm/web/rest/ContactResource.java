@@ -10,6 +10,8 @@ import java.util.Objects;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.data.domain.Example;
+import org.springframework.data.domain.ExampleMatcher;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
@@ -214,6 +216,12 @@ public class ContactResource {
     public Flux<Contact> getAllContactsAsStream() {
         log.debug("REST request to get all Contacts as a stream");
         return contactRepository.findAll();
+    }
+
+    @GetMapping(value = "search", produces = MediaType.APPLICATION_NDJSON_VALUE)
+    public Flux<Contact> searchContacts(@RequestBody Contact contact) {
+        log.debug("REST request to search Contacts");
+        return contactRepository.findAll(Example.of(contact, ExampleMatcher.matchingAny().withIgnoreCase()));
     }
 
     /**
